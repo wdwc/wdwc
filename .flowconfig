@@ -1,0 +1,6 @@
+[ignore]
+.*/vue.config.js
+./vue.config.js
+.*vue\.config\.js
+[options]
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe

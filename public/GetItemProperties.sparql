@@ -1,0 +1,18 @@
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX wd:       <http://www.wikidata.org/entity/>
+PREFIX bd:       <http://www.bigdata.com/rdf#>
+PREFIX wdt:      <http://www.wikidata.org/prop/direct/>
+SELECT ?pLabel ?prop ?val ?valLabel
+WHERE {
+  wd:Q1 ?prop ?val .
+?ps wikibase:directClaim ?prop .
+?ps rdfs:label ?pLabel .
+SERVICE wikibase:label {
+ bd:serviceParam wikibase:language 'en'. }
+FILTER (( LANG (?pLabel )) =
+ 'en' && (?prop != wdt:P18 ))
+}
+
+
+https://query.wikidata.org/#PREFIX%20rdfs%3A%20%20%20%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0APREFIX%20wikibase%3A%20%3Chttp%3A%2F%2Fwikiba.se%2Fontology%23%3E%0APREFIX%20wd%3A%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fentity%2F%3E%0APREFIX%20bd%3A%20%20%20%20%20%20%20%3Chttp%3A%2F%2Fwww.bigdata.com%2Frdf%23%3E%0APREFIX%20wdt%3A%20%20%20%20%20%20%3Chttp%3A%2F%2Fwww.wikidata.org%2Fprop%2Fdirect%2F%3E%0ASELECT%20%3FpLabel%20%3Fprop%20%3Fval%20%3FvalLabel%0AWHERE%20%7B%0A%20%20wd%3AQ1%20%3Fprop%20%3Fval%20.%0A%3Fps%20wikibase%3AdirectClaim%20%3Fprop%20.%0A%3Fps%20rdfs%3Alabel%20%3FpLabel%20.%0ASERVICE%20wikibase%3Alabel%20%7B%0A%20bd%3AserviceParam%20wikibase%3Alanguage%20%27en%27.%20%7D%0AFILTER%20%28%28%20LANG%20%28%3FpLabel%20%29%29%20%3D%0A%20%27en%27%20%26%26%20%28%3Fprop%20%21%3D%20wdt%3AP18%20%29%29%0A%7D%0A

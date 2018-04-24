@@ -1,6 +1,6 @@
 {
-  "name": "test1",
-  "short_name": "test1",
+  "name": "Wikidata Webcomponents",
+  "short_name": "wdwc",
   "icons": [
     {
       "src": "/img/icons/android-chrome-192x192.png",
